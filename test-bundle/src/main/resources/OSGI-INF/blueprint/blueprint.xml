@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:camelcxf="http://camel.apache.org/schema/blueprint/cxf"
+           xmlns:camel="http://camel.apache.org/schema/blueprint"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0"
+           xsi:schemaLocation="
+       http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+       http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd
+       http://camel.apache.org/schema/blueprint/cxf http://camel.apache.org/schema/cxf/camel-cxf-blueprint.xsd">
+
+
+    <camelcxf:cxfEndpoint id="cxfTest"
+                          address="test"
+                          serviceClass="com.edjusted.test.soap.Tester"
+            />
+
+    <!--<camelcxf:rsServer id="restServer"-->
+                       <!--address="test"-->
+                       <!--serviceClass="com.edjusted.test.rest.Tester"/>-->
+
+    <bean id="route" class="com.edjusted.test.routes.TestRoute"/>
+    <!--<bean id="tester" class="com.edjusted.test.rest.Tester"/>-->
+
+    <!--
+    Camel Context
+    -->
+    <camelContext id="pax-test" trace="false" xmlns="http://camel.apache.org/schema/blueprint">
+        <routeBuilder ref="route"/>
+    </camelContext>
+
+
+</blueprint>

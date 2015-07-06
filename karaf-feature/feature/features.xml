@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0" name="${project.name}">
+    <feature description="${project.description}" version="${project.version}" name="${project.name}">
+
+        <!--<feature>connector</feature>-->
+        <feature>http</feature>
+        <feature>camel</feature>
+        <feature>camel-cxf</feature>
+
+        <bundle>mvn:com.edjusted/test-bundle/${project.version}</bundle>
+
+        <!-- Jolokia has to be installed with auth enabled for it to register the BasicAuthHttpContext it provides
+             this will create a file org.jolokia.osgi.cfg in the karaf etc folder with these settings, which enables
+             jolokia to use the karaf jaas provider-->
+        <config name="org.jolokia.osgi">
+            org.jolokia.user=karaf
+            org.jolokia.realm=karaf
+            org.jolokia.authMode=jaas
+        </config>
+        <!-- Install the jolokia bundle-->
+        <bundle>mvn:org.jolokia/jolokia-osgi/1.3.1</bundle>
+
+
+    </feature>
+
+</features>
