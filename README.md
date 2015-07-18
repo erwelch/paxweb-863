@@ -11,7 +11,7 @@ I'm running java 1.8.0_25 (however, the code should most likely compile against 
 Fire up karaf and from the console:
 
 
-`feature:repo-add mvn:org.apache.cxf.karaf/apache-cxf/3.1.1/xml/features`
+`feature:repo-add mvn:org.apache.cxf.karaf/apache-cxf/3.0.4/xml/features`
 
 `feature:repo-add mvn:org.apache.camel.karaf/apache-camel/2.15.2/xml/features`
 
