@@ -7,7 +7,9 @@
     <version>0.1.0-SNAPSHOT</version>
     <modules>
         <module>karaf-feature</module>
-        <module>test-bundle</module>
+        <module>test-camel-cxf</module>
+        <module>test-plain-cxf</module>
+        <module>lib</module>
     </modules>
     <packaging>pom</packaging>
 

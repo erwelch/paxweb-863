@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0" name="${project.name}">
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0" name="${project.name}-${project.version}">
     <feature description="${project.description}" version="${project.version}" name="${project.name}">
 
         <!--<feature>connector</feature>-->
@@ -7,7 +7,7 @@
         <feature>camel</feature>
         <feature>camel-cxf</feature>
 
-        <bundle>mvn:com.edjusted/test-bundle/${project.version}</bundle>
+        <bundle>mvn:com.edjusted/lib/${project.version}</bundle>
 
         <!-- Jolokia has to be installed with auth enabled for it to register the BasicAuthHttpContext it provides
              this will create a file org.jolokia.osgi.cfg in the karaf etc folder with these settings, which enables
@@ -21,6 +21,16 @@
         <bundle>mvn:org.jolokia/jolokia-osgi/1.3.1</bundle>
 
 
+    </feature>
+
+    <feature name="${project.name}-camel" version="${project.version}">
+        <feature>${project.name}</feature>
+        <bundle>mvn:com.edjusted/test-camel-cxf/${project.version}</bundle>
+    </feature>
+
+    <feature name="${project.name}-cxf" version="${project.version}">
+        <feature>${project.name}</feature>
+        <bundle>mvn:com.edjusted/test-plain-cxf/${project.version}</bundle>
     </feature>
 
 </features>

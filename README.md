@@ -18,9 +18,15 @@ Fire up karaf and from the console:
 `feature:repo-add mvn:com.edjusted/karaf-feature/0.1.0-SNAPSHOT/xml/features`
 
 
-Install the feature:
+There are two feature options, one is the webservice implementation using just straight CXF:
 
-`feature:install -v edjusted-karaf-feature`
+`feature:install -v edjusted-karaf-feature-cxf`
+
+The other is the webservice implementation using camel and cxf:
+
+`feature:install -v edjusted-karaf-feature-camel`
+
+NOTE you can't install both features at the same time because they bind to the exact same path for the webservice.
 
 you should be able to pull up the WSDL at: http://localhost:8181/cxf/test?WSDL
 

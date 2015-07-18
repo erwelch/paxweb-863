@@ -1,6 +1,6 @@
 package com.edjusted.test.routes;
 
-import com.edjusted.test.soap.Response;
+import com.edjusted.lib.Response;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
